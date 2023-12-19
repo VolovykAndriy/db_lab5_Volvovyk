@@ -1,9 +1,10 @@
-DO $$
+DO $$ 
+DECLARE
+    i INT := 1;
 BEGIN
-	FOR i in 1..30
-		LOOP 
-			INSERT INTO global_sales (gs_id, game_id, sales, year_of_update)
-			VALUES (i, i*10, i * 1000000, 2020);
-		END LOOP;
-END;
-$$
+    LOOP
+        EXIT WHEN i > 5; -- Зупинка після вставки 5 рядків
+        INSERT INTO Platform (platform_id, Platform_Name) VALUES (i, 'Platform ' || i);
+        i := i + 1;
+    END LOOP;
+END $$;
