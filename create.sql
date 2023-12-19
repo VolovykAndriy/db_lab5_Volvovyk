@@ -22,7 +22,7 @@ CREATE TABLE Game
   publisher_id INT NOT NULL,
   PRIMARY KEY (game_id),
   FOREIGN KEY (platform_id) REFERENCES Platform(platform_id),
-  FOREIGN KEY (publisher_id) REFERENCES Publisher(publisher_id), 
+  FOREIGN KEY (publisher_id) REFERENCES Publisher(publisher_id)
 );
 
 CREATE TABLE global_sales
