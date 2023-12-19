@@ -19,14 +19,10 @@ csv_file_path = "vgsales.csv"
 
 clear_query = '''
 DELETE FROM Platform_has_game;
+DELETE FROM global_sales;
 DELETE FROM game;
 DELETE FROM platform;
 DELETE FROM publisher;
-
-
-DELETE FROM global_sales;
-
-
 '''
 
 cur.execute(clear_query)
@@ -58,7 +54,7 @@ with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
         # Вставка даних в таблицю Platform_has_game
         cur.execute("INSERT INTO Platform_has_game (game_id, platform_id) VALUES (%s, %s) ON CONFLICT (game_id, platform_id) DO NOTHING",
                     (rank, rank))
-        if rank == '500':
+        if rank == '5000':
             break
 
 # Збереження змін та закриття курсора та з'єднання
