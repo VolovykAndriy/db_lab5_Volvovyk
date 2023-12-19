@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 username = 'AAVOLOVYK'
 password = '111'
-database = 'lab_3'
+database = 'lab6'
 host = 'localhost'
 port = '5432'
 
@@ -45,7 +45,7 @@ FROM
 JOIN
   Game g ON p.publisher_id = g.publisher_id
 JOIN
-  global_sales gs ON g.gs_id = gs.gs_id
+  global_sales gs ON g.game_id = gs.game_id
 GROUP BY
   p.Publisher_Name
 ORDER BY
