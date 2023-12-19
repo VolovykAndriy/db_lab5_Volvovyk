@@ -5,7 +5,7 @@ from psycopg2 import sql
 # З'єднання з базою даних PostgreSQL
 username = 'AAVOLOVYK'
 password = '111'
-database = 'lab_3'
+database = 'lab6'
 host = 'localhost'
 port = '5432'
 
@@ -47,18 +47,18 @@ with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
         cur.execute("INSERT INTO Publisher (publisher_id, Publisher_Name) VALUES (%s, %s) ON CONFLICT (publisher_id) DO NOTHING",
                     (rank, publisher))
 
-        # Вставка даних в таблицю global_sales
-        cur.execute("INSERT INTO global_sales (gs_id, sales, year_of_update) VALUES (%s, %s, %s) ON CONFLICT (gs_id) DO NOTHING",
-                    (rank, float(global_sales.replace(';', '')), year))
-
         # Вставка даних в таблицю Game
-        cur.execute("INSERT INTO Game (game_id, Name, Year, Genre, platform_id, publisher_id, gs_id) VALUES (%s, %s, %s, %s, %s, %s, %s) ON CONFLICT (game_id) DO NOTHING",
-                    (rank, name, year, genre, rank, rank, rank))
+        cur.execute("INSERT INTO Game (game_id, Name, Year, Genre, platform_id, publisher_id) VALUES (%s, %s, %s, %s, %s, %s) ON CONFLICT (game_id) DO NOTHING",
+                    (rank, name, year, genre, rank, rank))
+
+        # Вставка даних в таблицю global_sales
+        cur.execute("INSERT INTO global_sales (gs_id, game_id, sales, year_of_update) VALUES (%s, %s, %s, %s) ON CONFLICT (gs_id) DO NOTHING",
+                    (rank, rank, float(global_sales.replace(';', '')), year))
 
         # Вставка даних в таблицю Platform_has_game
         cur.execute("INSERT INTO Platform_has_game (game_id, platform_id) VALUES (%s, %s) ON CONFLICT (game_id, platform_id) DO NOTHING",
                     (rank, rank))
-        if rank == '31':
+        if rank == '500':
             break
 
 # Збереження змін та закриття курсора та з'єднання
