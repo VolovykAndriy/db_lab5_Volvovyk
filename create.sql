@@ -18,10 +18,8 @@ CREATE TABLE Game
   Name VARCHAR(350) NOT NULL,
   Year INT NOT NULL,
   Genre VARCHAR(150) NOT NULL,
-  platform_id INT NOT NULL,
   publisher_id INT NOT NULL,
   PRIMARY KEY (game_id),
-  FOREIGN KEY (platform_id) REFERENCES Platform(platform_id),
   FOREIGN KEY (publisher_id) REFERENCES Publisher(publisher_id)
 );
 
