@@ -43,23 +43,23 @@ VALUES
   (15, 15, 22, 2009);
 
 -- Заповнення таблиці Game
-INSERT INTO Game (game_id, Name, Year, Genre, platform_id, publisher_id)
+INSERT INTO Game (game_id, Name, Year, Genre, publisher_id)
 VALUES
-  (1, 'Wii Sports', 2006, 'Sports', 1, 1),
-  (2, 'Super Mario Bros.', 1985, 'Platform', 2, 1),
-  (3, 'Mario Kart Wii', 2008, 'Racing', 1, 1),
-  (4, 'Wii Sports Resort', 2009, 'Sports', 1, 1),
-  (5, 'Pokemon Red/Pokemon Blue', 1996, 'Role-Playing', 4, 1,),
-  (6, 'Tetris', 1989, 'Puzzle', 4, 1),
-  (7, 'New Super Mario Bros.', 2006, 'Platform', 3, 1),
-  (8, 'Wii Play', 2006, 'Misc', 1, 1, 8),
-  (9, 'New Super Mario Bros. Wii', 2009, 'Platform', 1, 1),
-  (10, 'Duck Hunt', 1984, 'Shooter', 2, 1),
-  (11, 'Nintendogs', 2005, 'Simulation', 3, 1),
-  (12, 'Mario Kart DS', 2005, 'Racing', 3, 1),
-  (13, 'Pokemon Gold/Pokemon Silver', 1999, 'Role-Playing', 4, 1),
-  (14, 'Wii Fit', 2007, 'Sports', 1, 1),
-  (15, 'Wii Fit Plus', 2009, 'Sports', 1, 1);
+  (1, 'Wii Sports', 2006, 'Sports', 1),
+  (2, 'Super Mario Bros.', 1985, 'Platform', 1),
+  (3, 'Mario Kart Wii', 2008, 'Racing', 1),
+  (4, 'Wii Sports Resort', 2009, 'Sports', 1),
+  (5, 'Pokemon Red/Pokemon Blue', 1996, 'Role-Playing', 1,),
+  (6, 'Tetris', 1989, 'Puzzle', 1),
+  (7, 'New Super Mario Bros.', 2006, 'Platform', 1),
+  (8, 'Wii Play', 2006, 'Misc', 1, 8),
+  (9, 'New Super Mario Bros. Wii', 2009, 'Platform', 1),
+  (10, 'Duck Hunt', 1984, 'Shooter', 1),
+  (11, 'Nintendogs', 2005, 'Simulation', 1),
+  (12, 'Mario Kart DS', 2005, 'Racing', 1),
+  (13, 'Pokemon Gold/Pokemon Silver', 1999, 'Role-Playing', 1),
+  (14, 'Wii Fit', 2007, 'Sports', 1),
+  (15, 'Wii Fit Plus', 2009, 'Sports', 1);
   
 -- Заповнення таблиці Platform_has_game
 INSERT INTO Platform_has_game (game_id, platform_id)
